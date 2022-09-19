@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <title>Contact me</title>
+    <meta charset="utf-8">
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GtL1huin9EE" title="YouTube video player" 
+     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <form>
+        <fieldset>
+            <legend>Feedback</legend>
+            First Name <input type="text" name="fname" placeholder="anonymous" required>
+            Last Name <input type="text" name="lname" placeholder="anonymous" required>
+            Email <input type="email" name="email" placeholder="name@domain.com">
+            <br>
+            Date<input type="date" name="date" id="date">
+            <br>
+            Favorite Color<input type="color" name="color" id="color">
+            <br>
+            Would you reccomend this website?
+            <br>
+            <label for="radio1">Yes</label> <input type="radio" id="radio1" name="YesOrNo" >
+            <label for="radio2">No</label> <input type="radio" id="radio2" name="YesOrNo">
+            <br>
+            <select name="websites">
+                <option value="Twitter">Twitter</option>
+                <option value="Google">Google</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Time">Time</option>
+                <option value="Github">Github</option>
+            </select>
+            <br>
+            Rate the website on a scale from 1-10
+            <input type="range" name="rating" id="rating" min="0" max="10">
+            <br>
+            Additional comments
+            <br>
+            <textarea name="comments"  cols="30" rows="10"></textarea>
+            <br>
+            <input type="submit" value="Submit" name="submit">
+        </fieldset>
+    </form>
+
+</html>
