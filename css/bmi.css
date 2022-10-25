@@ -1,0 +1,44 @@
+div.BMIform {
+    background-color: cyan;
+    padding: 5%;
+    width: 40%;
+}
+
+div.image img {
+    position: fixed;
+    padding: 2%;
+    float: right;
+    right: 20%;
+    top: 15%;
+    width: 4cm;
+    height: 7cm;
+}
+
+
+#bar {
+    position: fixed;
+    float: right;
+    top: 2%;
+    right: 3%;
+    background-image: linear-gradient(to right,blue, green, orange, red);
+    width: 45%;
+    height: 2cm;
+}
+
+#bar ul li {
+    display: inline-block;
+    list-style: none;
+    width: 20%;
+    text-align: center;
+    padding: 2%;
+    z-index: 999;
+}
+
+div.bar p {
+    position: fixed;
+    border: solid black;
+    background-color: hsl(250, 10%, 70%);
+    height: 1.85cm;
+    width: 1cm;
+    top: 0%;
+}

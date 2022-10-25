@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title> BMI Calculator </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bmi.css">
+
+</head>
+
+<body>
+    <div class="BMIform">
+        <h1> BMI Calculator </h1>
+        <p>
+            <label for="name">Name</label>
+            <input type="name" name="name" id="name" placeholder="Name" onblur="message()">
+        </p>
+        <div id="thanks"> </div>
+        <script>
+            function message() {
+                var name = document.getElementById('name').value;
+                document.getElementById('thanks').innerHTML = "Thank you " + name + " for using the BMI calculator.";
+            }
+            document.getElementById('name').addEventListener('blur', message, false);
+        </script>
+        <p>
+            <label for="weight">Weight</label>
+            <input type="text" name="weight" id="weight" placeholder="Weight">
+        </p>
+        <p>
+            <label for="height">Height</label>
+            <input type="text" name="height" id="height" placeholder="Height">
+        </p>
+        <p> Choose your age:
+            <select size="1" name="age" id="age">
+                <option> Below 20 </option>
+                <option> 20-39 </option>
+                <option> 40-59 </option>
+                <option> Over 60 </option>
+            </select>
+        </p>
+        <p id="check"> </p>
+        <p> <input type="button" id="compute" value="Compute BMI" onclick="calculate()" onclick="under()"> </p>
+        <script>
+            function under() {
+                var select = document.getElementById('age').selectedIndex;
+                switch (select) {
+                    case 0:
+                        document.getElementById('check').innerHTML = "You are under 20 refer to this chart <a href=\"https://www.cdc.gov/growthcharts/data/set1clinical/cj41l023.pdf\"> CDC Growth charts </a>";
+                        break;
+                }
+            }
+            document.querySelector('input[value="Compute BMI"]').addEventListener('click', under, false);
+        </script>
+        <div id="answer"> </div>
+        <script>
+            function calculate() {
+                var w = parseFloat(document.getElementById('weight').value);
+                if (Number.isNaN(Number.parseFloat(w))) {
+                    window.alert("Try again,enter a number");
+                }
+                var h = parseFloat(document.getElementById('height').value);
+                if (Number.isNaN(Number.parseFloat(h))) {
+                    window.alert("Try again,enter a number");
+                }
+                    var bmi = (w * 703) / (h * h);
+                    if (bmi >= 28) {
+                        document.getElementById('answer').innerHTML = "Your BMI is " + bmi.toFixed(2) + "  and it is too high.";
+                    } else {
+                        document.getElementById('answer').innerHTML = "Your BMI is: " + bmi.toFixed(2);
+                    }
+
+                    var line = document.getElementById('line');
+                    var mii = document.getElementById('img')
+
+                    function newTab() {
+                        windows.open()
+                    }
+
+                    if (bmi <= 18.5) {
+                        line.animate([{ transform: 'translate(0,0)' }, { transform: 'translate(75px, 0)' }], { duration: 000, fill: "forwards" });
+                        mii.animate([{ transform: 'scaleX(1)' }, { transform: 'scaleX(.5)' }]  ,{duration: 200, fill:"forwards"} );
+
+                    } else if (bmi > 18.5 && bmi <= 24.9) {
+                        line.animate([{ transform: 'translate(0,0)' }, { transform: 'translate(230px, 0)' }], { duration: 200, fill: "forwards" });
+                        mii.animate([{ transform: 'scaleX(1)' }, { transform: 'scaleX(1)' }], {duration: 200, fill:"forwards"} );
+ 
+                    } else if (bmi > 24.9 && bmi <= 29.9) {
+                        line.animate([{ transform: 'translate(0,0)' }, { transform: 'translate(370px, 0)' }], { duration: 200, fill: "forwards" });
+                        mii.animate([{ transform: 'scaleX(1)' }, { transform: 'scaleX(1.5)' }],  {duration: 200, fill:"forwards"} );
+
+                    } else {
+                        line.animate([{ transform: 'translate(0,0)' }, { transform: 'translate(505px, 0)' }], { duration: 200, fill: "forwards" });
+                        mii.animate([{ transform: 'scaleX(1)' }, { transform: 'scaleX(2)' }],  {duration: 200, fill:"forwards"} );
+
+                        window.open('http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm', '_blank');
+                    }
+                }
+                bE = document.getElementById('compute');
+                bE.addEventListener('click', calculate, false);
+        </script>
+    </div>
+
+    <div class="image" id="img">
+        <img src="img/wii.png" img>
+    </div>
+
+    <div class="bar" id="bar">
+        <ul>
+            <li> Underweight </li>
+            <li> Normal </li>
+            <li> Overweight </li>
+            <li> Obese </li>
+        </ul>
+        <p name="line" id="line"> </p>
+    </div>
+</body>
+
+</html>
