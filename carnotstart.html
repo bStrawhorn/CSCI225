@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+    <style>html{ 
+        background-image: url("img/IMG_2900.JPG");
+        background-size: cover;
+    }</style>
+    <head>
+    <title>Car won't start</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/car.css">
+
+</head>
+<div class="start" id="start">
+    <p>
+        Will your car start?
+        <input type="button" id="begin" value="No" onclick="f1()">
+    </p>
+
+</div>
+<div id="s" style="display:none">
+
+    <p>Does the Starter crank?
+        <input type="button" id="begin" value="Yes" onclick="f2()">
+        <input type="button" id="begin" value="No" onclick="f3()">
+    </p>
+</div>
+
+<div id="2" style="display:none">
+
+    <p>Does the Engine Fire?
+        <input type="button" id="begin" value="Yes" onclick="f10()">
+        <input type="button" id="begin" value="No" onclick="f11()">
+    </p>
+</div>
+
+<div id="3" style="display:none">
+
+    <p>Does the Starter spin?
+        <input type="button" id="begin" value="Yes" onclick="f4()">
+        <input type="button" id="begin" value="No" onclick="f5()">
+    </p>
+</div>
+<div id="4" style="display:none">
+
+    <p>Solinoid Stuck, not powered, or Flywheel is missing teeth
+
+    </p>
+</div>
+<div id="5" style="display:none">
+
+    <p>Does the battery read 12v?
+        <input type="button" id="begin" value="Yes" onclick="f6()">
+        <input type="button" id="begin" value="No" onclick="f7()">
+    </p>
+</div>
+
+<div id="6" style="display:none">
+
+    <p>Are the Battey terminals clean?
+        <input type="button" id="begin" value="Yes" onclick="f8()">
+        <input type="button" id="begin" value="No" onclick="f9()">
+    </p>
+</div>
+
+<div id="7" style="display:none">
+
+    <p>
+        Jump Start or pop start car and check if battery is charging
+    </p>
+</div>
+
+<div id="8" style="display:none">
+
+    <p>With the car in park or neutral, use a heavy jumper or screwdriver 
+        to bypass starter relay solinoid. Test starter
+    </p>
+</div>
+
+<div id="9" style="display:none">
+
+    <p>Clean battery terminals and connectors, engine ground
+    </p>
+</div>
+
+<div id="10" style="display:none">
+
+    <p>Does it start and stall?
+        <input type="button" id="begin" value="Yes" onclick="f24()">
+        <input type="button" id="begin" value="No" onclick="f25()">
+    </p>
+</div>
+
+<div id="11" style="display:none">
+
+    <p>Is there spark to the plugs?
+        <input type="button" id="begin" value="Yes" onclick="f12()">
+        <input type="button" id="begin" value="No" onclick="f13()">
+    </p>
+</div>
+
+<div id="12" style="display:none">
+
+    <p>Is there fuel to the filter?
+        <input type="button" id="begin" value="Yes" onclick="f20()">
+        <input type="button" id="begin" value="No" onclick="f21()">
+    </p>
+</div>
+
+<div id="13" style="display:none">
+
+    <p>Is there spark from the coil?
+        <input type="button" id="begin" value="Yes" onclick="f14()">
+        <input type="button" id="begin" value="No" onclick="f15()">
+    </p>
+</div>
+
+<div id="14" style="display:none">
+
+    <p>Is it a mechanical distributor?
+        <input type="button" id="begin" value="Yes" onclick="f16()">
+        <input type="button" id="begin" value="No" onclick="f17()">
+    </p>
+</div>
+
+<div id="15" style="display:none">
+
+    <p>Is there 12V+ at the coil primary?
+        <input type="button" id="begin" value="Yes" onclick="f18()">
+        <input type="button" id="begin" value="No" onclick="f19()">
+    </p>
+</div>
+
+<div id="16" style="display:none">
+
+    <p>Check condenser, points or magnetic pick-up, rotor, or cap damage.
+    </p>
+</div>
+
+<div id="17" style="display:none">
+
+    <p>For electronic distribution, see model manual for diagnostic checks.
+    </p>
+</div>
+
+<div id="18" style="display:none">
+
+    <p>Test coil for internal short. check secondary output wire resistance.
+    </p>
+</div>
+
+<div id="19" style="display:none">
+
+    <p>Ignition system wiring, voltage regulator
+    </p>
+</div>
+
+<div id="20" style="display:none">
+
+    <p>Is it fuel injected?
+        <input type="button" id="begin" value="Yes" onclick="f22()">
+        <input type="button" id="begin" value="No" onclick="f23()">
+    </p>
+</div>
+
+<div id="21" style="display:none">
+
+    <p>Vapor lock, fuel pump, blockage.
+    </p>
+</div>
+
+<div id="22" style="display:none">
+
+    <p>Single-point, check throttle body.
+         Electronic multi-point, seperate diagnostic.
+    </p>
+</div>
+
+<div id="23" style="display:none">
+
+    <p>Try starter spray in carb, throttle open.
+    </p>
+</div>
+
+<div id="24" style="display:none">
+
+    <p>Check OBD, blink code.
+        <input type="button" id="begin" value="Yes" onclick="f26()">
+        <input type="button" id="begin" value="No" onclick="f27()">
+    </p>
+</div>
+
+<div id="25" style="display:none">
+
+    <p>Ignition timing, fuel problem, cranking too slow- battery, starter.
+    </p>
+</div>
+
+<div id="26" style="display:none">
+
+    <p>Does it stall on key release to run?
+        <input type="button" id="begin" value="Yes" onclick="f28()">
+        <input type="button" id="begin" value="No" onclick="f29()">
+    </p>
+</div>
+
+<div id="27" style="display:none">
+
+    <p>Read OBD or OBDII or check for blink code access.
+    </p>
+</div>
+
+<div id="28" style="display:none">
+
+    <p>Ignition "run" circuit or column key switch failure. Ring out with meter.
+    </p>
+</div>
+
+<div id="29" style="display:none">
+
+    <p>Does it stall in rain?
+        <input type="button" id="begin" value="Yes" onclick="f30()">
+        <input type="button" id="begin" value="No" onclick="f31()">
+    </p>
+</div>
+
+<div id="30" style="display:none">
+
+    <p>Check for cracked coil, distributor. 
+        Check visable electrical arcing running in dark.
+    </p>
+</div>
+
+<div id="31" style="display:none">
+
+    <p>Does it stall when warm?
+        <input type="button" id="begin" value="Yes" onclick="f32()">
+        <input type="button" id="begin" value="No" onclick="f33()">
+    </p>
+</div>
+
+<div id="32" style="display:none">
+
+    <p>Adjust idle, blow out fuel filter, check furl pump output.
+        Check for vacuum leak or sensor failure.
+    </p>
+</div>
+
+<div id="33" style="display:none">
+
+    <p>On cold stalling, check for stuck choke, EGR.
+        Check for vacuum leak.
+    </p>
+</div>
+
+<script>
+    function f1() {
+        var a = document.getElementById("start");
+        var b = document.getElementById("s");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+
+    function f2() {
+        var a = document.getElementById("s");
+        var b = document.getElementById("2");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+
+    function f3() {
+        var a = document.getElementById("s");
+        var b = document.getElementById("3");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+
+    function f4() {
+        var a = document.getElementById("3");
+        var b = document.getElementById("4");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f5() {
+        var a = document.getElementById("3");
+        var b = document.getElementById("5");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f6() {
+        var a = document.getElementById("5");
+        var b = document.getElementById("6");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f7() {
+        var a = document.getElementById("5");
+        var b = document.getElementById("7");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f8() {
+        var a = document.getElementById("6");
+        var b = document.getElementById("8");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f9() {
+        var a = document.getElementById("6");
+        var b = document.getElementById("9");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f10() {
+        var a = document.getElementById("2");
+        var b = document.getElementById("10");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f11() {
+        var a = document.getElementById("2");
+        var b = document.getElementById("11");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f12() {
+        var a = document.getElementById("11");
+        var b = document.getElementById("12");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f13() {
+        var a = document.getElementById("11");
+        var b = document.getElementById("13");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f14() {
+        var a = document.getElementById("13");
+        var b = document.getElementById("14");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f15() {
+        var a = document.getElementById("13");
+        var b = document.getElementById("15");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f16() {
+        var a = document.getElementById("14");
+        var b = document.getElementById("16");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f17() {
+        var a = document.getElementById("14");
+        var b = document.getElementById("17");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f18() {
+        var a = document.getElementById("15");
+        var b = document.getElementById("18");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f19() {
+        var a = document.getElementById("15");
+        var b = document.getElementById("19");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f20() {
+        var a = document.getElementById("12");
+        var b = document.getElementById("20");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f21() {
+        var a = document.getElementById("12");
+        var b = document.getElementById("21");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f22() {
+        var a = document.getElementById("20");
+        var b = document.getElementById("22");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f23() {
+        var a = document.getElementById("20");
+        var b = document.getElementById("23");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f24() {
+        var a = document.getElementById("10");
+        var b = document.getElementById("24");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f25() {
+        var a = document.getElementById("10");
+        var b = document.getElementById("25");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f26() {
+        var a = document.getElementById("24");
+        var b = document.getElementById("26");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f27() {
+        var a = document.getElementById("24");
+        var b = document.getElementById("27");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f28() {
+        var a = document.getElementById("26");
+        var b = document.getElementById("28");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f29() {
+        var a = document.getElementById("26");
+        var b = document.getElementById("29");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f30() {
+        var a = document.getElementById("29");
+        var b = document.getElementById("30");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f31() {
+        var a = document.getElementById("29");
+        var b = document.getElementById("31");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f32() {
+        var a = document.getElementById("31");
+        var b = document.getElementById("32");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+    function f33() {
+        var a = document.getElementById("31");
+        var b = document.getElementById("33");
+        if (a.style.display === 'block') {
+            a.style.display = "none";
+        }
+        else {
+            a.style.display = "none";
+        }
+        if (b.style.display === 'none') {
+            b.style.display = "block";
+        }
+
+    }
+</script>
+<footer>Copyright 2016 by Morris Rosenthal All Rights Reserved  ---SOURCE: https://www.ifitjams.com/starting.htm</footer>
+
+</html>
